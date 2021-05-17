@@ -1,0 +1,25 @@
+//Vendor libs
+@import '../../node_modules/bootstrap/scss/mixins/_breakpoints.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap-reboot.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap-grid.scss'; 
+
+
+//Varaibles
+
+
+
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		src: url($furl) format('woff2');
+    }    
+}
+@include font('Pattaya', normal, 400, '../../dist/fonts/Pattaya-Regular.woff2');
+
+
