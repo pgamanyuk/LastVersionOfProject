@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="bgOut" class="bgOut"></div>
+    <div class="image__background"></div>
+    <div class="pageChat">
+      @@include('../parts/_fade.html') @@include('../parts/_burger.html')
+      @@include('../parts/_header.html') @@include('../parts/_sidebar.html')
+
+      <div class="chatBox">
+        @@include('../parts/_loader.html')
+        <div class="chat__tabs"></div>
+        <div class="chatBox__area" id="chatArea"></div>
+
+        <div class="sendSection">
+          <textarea
+          placeholder="Напишите преподавателю"
+          style="height: 16px"
+          rows="1"
+          wrap="soft"
+          id="chatInput"
+          class="chatBox__input"
+        ></textarea>
+
+        <div id="chatBtn" class="btn__send">Отправить</div>
+        <svg id="chatBtn" class="btn__send-img">
+          <use xlink:href="#sendIcon"></use>
+      </svg>
+        </div>
+      </div>
+ 
+      
+    </div>
+
+    @@include('../parts/_svg-sprites.html')
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.min.js"></script>
+    <script src="../js/chat/autosize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#progress").width(50 + Math.random() * 30 + "%");
+        $(window).on("load", function () {
+          $("#progress").width("101%").delay(300).fadeOut(400);
+        });
+      });
+    </script>
+    <script src="../js/chat/app.js"></script>
+    
+  </body>
+</html>

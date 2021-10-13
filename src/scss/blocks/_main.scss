@@ -1,0 +1,423 @@
+.mainInfo{
+    display: flex;
+    margin-top: 130px;
+    justify-content: space-evenly;
+}
+
+.mainInfo__item {
+    padding: 20px 30px;
+    background-color: rgb(17, 25, 33);
+    border-radius: 10px;
+}
+
+
+
+.mainInfo__item-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.profile__allInfo {
+    display: flex;
+    margin-bottom: 35px;
+
+}
+
+.allInfo__names {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.allInfo__avatar-img {
+    width: 140px;
+    height: 140px;
+}
+
+.allInfo__names-login {
+    font-size: 27px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.allInfo__names-level {
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+
+.profile__btn {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    padding: 15px 45px;
+    border: 3px solid #149f97;
+    border-radius: 10px;
+}
+
+.allInfo__avatar {
+    margin-right: 20px;
+}
+
+.profile__progress {
+    display: flex;
+    flex-direction: column;
+}
+
+.allProgress {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.progress__progressInfo {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progressInfo__points {
+    display: flex;
+    justify-content: space-between;
+}
+
+.allraitings {
+    display: flex;
+    align-items: center;
+}
+
+.allraitings__achiev {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 15px;
+    border: 3px solid #149f97;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.achiev__current {
+    display: flex;
+    align-items: center;
+    
+}
+
+.achiev__current-img {
+    width: 70px;
+    height: 70px;
+}
+
+.achiev__current-name {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.progress__avatar {
+    margin-right: 20px;
+}
+
+.progress__avatar-img {
+    width: 60px;
+    height: 60px;
+}
+
+.progress__bar {
+    width: 580px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #0d6661;
+
+}
+
+.progress__bar-cur {
+    height: 20px;
+    border-radius: 10px;
+    background-color: #149f97;
+    width: 367px;
+    z-index: 1111111;
+}
+
+.points__level {
+    font-size: 20px;
+}
+
+.points__score {
+    font-size: 20px;
+}
+
+.achiev__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.allraitings__info {
+    margin-right: 45px;
+}
+
+.allraitings__info-date {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.allraitings__info-rate {
+    font-size: 20px;
+}
+
+@media (max-width: 1400px) {
+    .mainInfo {
+        justify-content: space-between;
+    }
+
+    .mainInfo__item-profile {
+        margin-right: 10px;
+    }
+}
+
+
+@media (max-width: 1270px) {
+    .mainInfo {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mainInfo__item-profile {
+        margin-bottom: 10px;
+        width: 70%;
+        margin-right: 0;
+    }
+
+    .mainInfo__item-progress {
+        width: 70%;
+       
+    }
+
+    .profile__progress {
+        align-items: center;
+    }
+   
+}
+
+@media (max-width: 1199px) {
+    .mainInfo__item-profile {
+        width: 80%;
+    }
+
+    .mainInfo__item-progress {
+        width: 80%;
+    }
+
+    .mainInfo {
+        align-items: center;
+        margin-left: 65px;
+    }
+}
+
+@media (max-width: 991px) {
+    .mainInfo__item-profile {
+        width: 100%;
+    }
+
+    .mainInfo__item-progress {
+        width: 100%;
+    }
+
+    .progress__bar {
+        width: 490px;
+    
+    }
+}
+
+@media (max-width: 860px) {
+    .progress__bar {
+        width: 330px;
+    
+    }
+
+    .progress__bar-cur {
+        width: 100px;
+    
+    }
+
+    .mainInfo__item-profile {
+        width: 75%;
+    }
+
+    .mainInfo__item-progress {
+        width: 75%;
+    }
+}
+
+@media (max-width: 767px) {
+ 
+    
+    .mainInfo__item-profile {
+        width: 100%;
+    }
+
+    .mainInfo__item-progress {
+        width: 100%;
+    }
+
+    .progress__bar {
+        width: 270px;
+    
+    }
+
+    .progress__bar-cur {
+        width: 140px;
+    }
+
+    .profile__btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .points__score {
+        display: none;
+    }
+    
+    .allProgress {
+        justify-content: space-between;
+    }
+
+    .profile__progress {
+        align-items: unset;
+    }
+
+   .progress__progressInfo {
+       align-items: center;
+   }
+}
+
+
+@media (max-width: 767px) {
+ 
+    
+    .progress__avatar {
+        display: none;
+    }
+
+
+    .profile__progress {
+        align-items: center;
+    }
+
+    .progressInfo__points {
+        margin-bottom: 10px;
+    }
+
+    .allraitings__achiev {
+        display: none;
+    }
+
+   .allraitings__info {
+       text-align: center;
+       margin-right: 0;
+   }
+
+   
+
+    .allInfo__avatar-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .allInfo__names-login {
+        font-size: 22px;
+    }
+
+    .allInfo__names-level {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .progress__bar {
+        width: 260px;
+    
+    }
+
+    .progress__bar-cur {
+        width: 20px;
+    }
+
+    .profile__btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media(max-width: 480px) {
+    .allInfo__avatar-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .allInfo__names-login {
+        font-size: 18px;
+    }
+
+    .allInfo__names-level, .points__level, .allraitings__info-date, .allraitings__info-rate{
+        font-size: 16px;
+    }
+
+    .mainInfo {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 65px;
+    }
+    
+    .mainInfo__item-profile {
+        width: 100%;
+    }
+
+    .mainInfo__item-progress {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 440px) {
+    .profile__btn {
+        font-size: 14px;
+        padding: 5px 5px;
+        text-align: center;
+    }
+
+     .progress__bar {
+        width: 200px;
+    
+    }
+}
+
+@media (max-width: 413px) {
+    .profile__btn {
+        font-size: 14px;
+        padding: 5px 5px;
+        text-align: center;
+    }
+
+     .mainInfo__item-progress {
+        display: none;
+    
+    }
+
+    .allInfo__avatar {
+        display: none;
+    }
+
+    .header__bar-score {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .mainInfo__item-profile {
+        width: 100%;
+    }
+}
