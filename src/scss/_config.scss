@@ -5,6 +5,20 @@
 
 
 //Varaibles
+$white: #fff;
+$near-white: #ccc;
+$navy-blue: rgb(17, 25, 33);
+$salad: #149f97;
+$dark-salad: #0d6661;
+$header-fill: #10292e;
+$jackal: rgb(201, 228, 255);
+$giena: rgb(215, 213, 223);
+$blue: rgb(148, 202, 255);
+$orange: #cc582d;
+$small: 16px;
+$medium: 20px;
+$big: 27px;
+$radius: 10px;
 
 
 
@@ -20,6 +34,10 @@
 		src: url($furl) format('woff2');
     }    
 }
-@include font('Pattaya', normal, 400, '../../dist/fonts/Pattaya-Regular.woff2');
+@include font('Jura', normal, 100, '../../dist/fonts/Jura-Light.woff2');
+@include font('Jura', normal, 400, '../../dist/fonts/Jura-Regular.woff2');
+@include font('Jura', normal, 500, '../../dist/fonts/Jura-Medium.woff2');
+@include font('Jura', normal, 600, '../../dist/fonts/Jura-SemiBold.woff2');
+@include font('Jura', normal, 700, '../../dist/fonts/Jura-Bold.woff2');
 
 
