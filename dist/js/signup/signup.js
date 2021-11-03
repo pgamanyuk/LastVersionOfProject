@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
     const mail = document.querySelector('#mail');
-    const login = document.querySelector('#login');
     const pass = document.querySelector('#pass');
     const confirm = document.querySelector('#confirmPass');
     const btnSend = document.querySelector('#btnSend');
@@ -10,8 +9,115 @@ window.addEventListener("DOMContentLoaded", () => {
     const errorMessage = document.querySelector('#errorMessage');
 
 
+    function singUpWithVk() {
+        VK.init({
+            apiId: 7982119
+        });
+        const errorMessage = document.querySelector('#errorMessageGoogle')
+        const btn = document.querySelector('#vk_auth');
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            VK.Auth.login(function(response) {
+                if (response.session) {
+                    axios.post('http://localhost:8000/checkSocialId', {id:response.session.user.id, social:'vk'})
+                        .then(res => {
+                            if(res.data.message) {
+                                errorMessage.innerHTML = res.data.message;
+                                errorMessage.classList.toggle('hide');
+                                setTimeout(() => {
+                                    errorMessage.classList.toggle('hide');
+                                }, 4000)
+                            } else {
+                                location.href = `https://localhost:80/set-mail/index.html?id=${response.session.user.id}&social=vk`;
+                            }
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        })
+                } else {
+                    console.log(1)
+                }
+            });
+        })
+    }
+    singUpWithVk()
 
-    
+    function signupWithGoogle() {
+        google.accounts.id.initialize({
+            client_id: "341269728044-13kn13rnm4k57nvj2n7mi73q9od4docv",
+            callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { type: 'icon'}
+        );
+    }
+
+    function handleCredentialResponse(response) {
+        const errorMessage = document.querySelector('#errorMessageGoogle')
+        axios.post('http://localhost:8000/decodejwtgoogleup', {
+            token: response.credential
+        }).then(res => {
+            if(res.data.message) {
+                errorMessage.innerHTML = res.data.message;
+                errorMessage.classList.toggle('hide');
+                setTimeout(() => {
+                    errorMessage.classList.toggle('hide');
+                }, 4000)
+            } else {
+                localStorage.setItem('token', res.data.token);
+                location.href = '../chat/index.html';
+            }
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+    signupWithGoogle();
+
+    function signUnWithFB() {
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '394717829027741',
+                cookie: true,
+                xfbml: true,
+                version: 'v1.0'
+            });
+
+            FB.AppEvents.logPageView();
+
+        }
+
+        const btn = document.querySelector('#fb_auth');
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
+            FB.login(function(response){
+
+                if (response.authResponse.userID) {
+                    axios.post('http://localhost:8000/checkSocialId', {id:response.authResponse.userID, social:'fb'})
+                        .then(res => {
+                            if(res.data.message) {
+                                errorMessage.innerHTML = res.data.message;
+                                errorMessage.classList.toggle('hide');
+                                setTimeout(() => {
+                                    errorMessage.classList.toggle('hide');
+                                }, 4000)
+                            } else {
+                                location.href = `https://localhost:80/set-mail/index.html?id=${response.authResponse.userID}&social=fb`;
+                            }
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        })
+
+                    l
+                } else {
+                    console.log(1)
+                }
+            });
+        })
+
+    }
+    signUnWithFB()
 
     mail.addEventListener('blur', ()=> {
         if(!/\S+@\S+\.\S+/.test(mail.value)) {
@@ -23,7 +129,7 @@ window.addEventListener("DOMContentLoaded", () => {
         mailError.classList.add('hide');
     }, true)
     mail.addEventListener('input', ()=> {
-        if(mailError.classList.contains('hide') && passError.classList.contains('hide') && passMatchError.classList.contains('hide') && mail.value && pass.value && login.value && pass.value === confirm.value) {
+        if(mailError.classList.contains('hide') && passError.classList.contains('hide') && passMatchError.classList.contains('hide') && mail.value && pass.value &&  pass.value === confirm.value) {
             btnSend.removeAttribute('disabled');
         } else {
             btnSend.setAttribute('disabled', 'disabled')
@@ -43,7 +149,7 @@ window.addEventListener("DOMContentLoaded", () => {
         passError.classList.add('hide');
     }, true)
     pass.addEventListener('input', ()=> {
-        if(mailError.classList.contains('hide') && passError.classList.contains('hide') && passMatchError.classList.contains('hide') && mail.value && pass.value && login.value && pass.value === confirm.value) {
+        if(mailError.classList.contains('hide') && passError.classList.contains('hide') && passMatchError.classList.contains('hide') && mail.value && pass.value && pass.value === confirm.value) {
             btnSend.removeAttribute('disabled');
         } else {
             btnSend.setAttribute('disabled', 'disabled')
@@ -62,7 +168,7 @@ window.addEventListener("DOMContentLoaded", () => {
         passMatchError.classList.add('hide');
     }, true)
     confirm.addEventListener('input', ()=> {
-        if(mailError.classList.contains('hide') && passError.classList.contains('hide') && passMatchError.classList.contains('hide') && mail.value && pass.value && login.value && pass.value === confirm.value) {
+        if(mailError.classList.contains('hide') && passError.classList.contains('hide') && passMatchError.classList.contains('hide') && mail.value && pass.value  && pass.value === confirm.value) {
             btnSend.removeAttribute('disabled');
         } else {
             btnSend.setAttribute('disabled', 'disabled')
@@ -71,8 +177,6 @@ window.addEventListener("DOMContentLoaded", () => {
     
     
     const passIcons = document.querySelectorAll('.passwordIcon');
-  
-    console.log(passIcons)
   
     passIcons.forEach((icon, index) => {
       icon.addEventListener('click', () => {
@@ -93,38 +197,41 @@ window.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         errorMessage.classList.add('hide');
         const mailValue = mail.value;
-        const loginValue = login.value;
+        let login = '';
         const passValue = pass.value;
         const confirmValue = confirm.value;
         const loader = document.querySelector('#newLoader');
+
+        for (let i = 0; i < mail.value.length; i++) {
+            if(mailValue[i] === '@') break;
+            else login += mailValue[i];
+        }
         loader.classList.toggle('hide');
        
-            axios.post('https://stark-lake-56522.herokuapp.com/signup', {
+            axios.post('http://localhost:8000/signup', {
                 mail: mailValue,
                 password: passValue,
-                login: loginValue
+                login: login
               })
               .then(function (res) {
-                loader.classList.toggle('hide');
-                
-                if(typeof res.data != 'string') {
-                    localStorage.setItem('token', res.data.token);
-                     location.href = '../profile/index.html';
+                  loader.classList.toggle('hide');
+                if(res.data.message) {
+                    errorMessage.innerHTML = res.data.message;
+                    errorMessage.classList.toggle('hide');
+                    setTimeout(() => {
+                        errorMessage.classList.toggle('hide');
+                    }, 4000)
                 } else {
-                    errorMessage.innerHTML = res.data;
-                    errorMessage.classList.remove('hide');
+                    console.log('zaebumba')
                 }
               })
               .catch(function (error) {
                 console.log(error);
                 loader.classList.toggle('hide');
-                alert('Pizdariki')
               });
         
     })
 
-    //old
-  
 
   });
   

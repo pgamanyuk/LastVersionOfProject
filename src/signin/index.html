@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <link rel="stylesheet" href="../css/style.min.css" />
     <title>Document</title>
 </head>
@@ -29,7 +32,7 @@
                
             </div>
 
-            <div id="btnSend" class="signin__formBtn">Войти</div>
+            <button  id="btnSend" class="signin__formBtn" disabled>Войти</button>
             <div id="newLoader" class="newLoader hide">
                 <div class="newDot"></div>
                 <div class="newDot"></div>
@@ -38,11 +41,35 @@
                 <div class="newDot"></div>
             </div>
         </form>
+
+        <div class="social__block">
+            <div class="social__block-title">БЫСТРЫЙ ВХОД <br>
+                В СУЩЕСТВУЮЩИЙ АККАУНТ</div>
+            <div class="social__btns">
+                <div class='social__btn social__btn-relative'>
+                    <div class="buttonDiv" id="buttonDiv"></div>
+                    <img class="btnImgG" src="../img/signin/google.png" alt="">
+
+                </div>
+                <div id="vk_auth"  class='social__btn'>
+                    <img class="social__btn-img" src="../img/signin/vk.png" alt="">
+                </div>
+                <div id="fb_auth"  class='social__btn'>
+                    <img class="social__btn-img" src="../img/signin/fb3.png" alt="">
+                </div>
+            </div>
+        </div>
+
         <div id="errorMessage" class="errorMessage hide">Неверный логин или пароль</div>
+        <div id="errorMessageGoogle" class="errorMessage hide"></div>
+        <a class="link__forgetPassword" href="../restore/index.html">Забыли пароль?</a>
+
+
+<!--        <img class="btnImgG" src="../img/chat/admin.png" alt="">-->
+<!--        <button id="vk_auth">Тыкни меня VK</button>-->
+<!--        <button id="fb_auth">Тыкни меня FB</button>-->
     </div>
 
-   
-   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.22.0/axios.min.js"></script>
     <script src="../js/signin/signin.js"></script>
 </body>

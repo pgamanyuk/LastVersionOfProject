@@ -6,7 +6,7 @@ button {
     
     width: 300px;
     position: absolute;
-    top: 120px;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
     
@@ -144,7 +144,7 @@ input {
 
 .newLoader {
     position: absolute;
-    bottom: -50%;
+    bottom: -20%;
     left: 40%;
     margin-left: 10%;
     transform: translate3d(-50%, -50%, 0);
@@ -225,3 +225,103 @@ input {
       transform: scale(1);
     }
   }
+
+.buttonDiv {
+
+
+    position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+
+
+}
+
+.btnImgG {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+}
+
+.S9gUrf-YoZ4jf {
+  opacity: 0;
+}
+
+.social__btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social__btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border: .5px solid #00000080;
+  border-radius: 3px;
+}
+
+.social__btn:hover {
+  cursor: pointer;
+  background-color: #e3e3e3;
+  .social__btn-img {
+    width: 20px;
+    height: 20px;
+    transition: all .1s linear;
+  }
+  .btnImgG {
+    width: 20px;
+    height: 20px;
+    transition: all .1s linear;
+  }
+}
+
+.social__btn-img {
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.social__block-title {
+  color: $grey;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.social__block {
+  margin-top: 30px;
+}
+
+.social__btn-relative {
+  position: relative;
+}
+
+.link__forgetPassword {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: $orange;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+.link__forgetPassword:hover {
+  color: #d25426;
+}
+@media (max-height: 667px ) {
+    .signbox {
+      top: 10%;
+    }
+
+  .signin__form {
+    padding-top: 0;
+  }
+}

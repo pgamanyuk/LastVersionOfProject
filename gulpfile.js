@@ -44,8 +44,9 @@ function browsersync() {
     browserSync.init({
         server: {
             baseDir: './' + project_folder + '/'
-        }, port: 3001,
-        notify: false
+        }, port: 80,
+        notify: false,
+        https: true
     })
 }
 

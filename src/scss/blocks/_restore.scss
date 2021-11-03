@@ -1,0 +1,50 @@
+.restorePasswordBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+}
+
+.restore__title {
+  color: $navy-blue;
+}
+
+.restore__input {
+  border: 1px solid black;
+}
+
+.restore__text {
+  color: $grey;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.confirmPasswordBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+}
+
+.createNewPasswordBlock {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

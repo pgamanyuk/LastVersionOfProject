@@ -2357,7 +2357,7 @@ body {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 #progress {
@@ -2367,7 +2367,7 @@ body {
   left: -6px;
   width: 1%;
   height: 3px;
-  background: #cc582d;
+  background: #9c340f;
   border-radius: 1px;
   -webkit-transition: width 500ms ease-out, opacity 400ms linear;
   -o-transition: width 500ms ease-out, opacity 400ms linear;
@@ -2382,7 +2382,7 @@ button {
 .signbox {
   width: 300px;
   position: absolute;
-  top: 120px;
+  top: 15%;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -2529,7 +2529,7 @@ input {
 
 .newLoader {
   position: absolute;
-  bottom: -50%;
+  bottom: -20%;
   left: 40%;
   margin-left: 10%;
   -webkit-transform: translate3d(-50%, -50%, 0);
@@ -2610,6 +2610,193 @@ input {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+.buttonDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.btnImgG {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+}
+
+.S9gUrf-YoZ4jf {
+  opacity: 0;
+}
+
+.social__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.social__btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border: .5px solid #00000080;
+  border-radius: 3px;
+}
+
+.social__btn:hover {
+  cursor: pointer;
+  background-color: #e3e3e3;
+}
+
+.social__btn:hover .social__btn-img {
+  width: 20px;
+  height: 20px;
+  -webkit-transition: all .1s linear;
+  -o-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.social__btn:hover .btnImgG {
+  width: 20px;
+  height: 20px;
+  -webkit-transition: all .1s linear;
+  -o-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.social__btn-img {
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.social__block-title {
+  color: #00000080;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.social__block {
+  margin-top: 30px;
+}
+
+.social__btn-relative {
+  position: relative;
+}
+
+.link__forgetPassword {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  color: #9c340f;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.link__forgetPassword:hover {
+  color: #d25426;
+}
+
+.restorePasswordBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 200px;
+}
+
+.restore__title {
+  color: #111921;
+}
+
+.restore__input {
+  border: 1px solid black;
+}
+
+.restore__text {
+  color: #00000080;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.confirmPasswordBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 200px;
+}
+
+.createNewPasswordBlock {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media (min-width: 576px) {
@@ -7857,6 +8044,16 @@ input {
     display: none !important;
   }
 }
+
+@media (max-height: 667px) {
+  .signbox {
+    top: 10%;
+  }
+
+  .signin__form {
+    padding-top: 0;
+  }
+}
 @supports (-webkit-appearance:none){
 .image__background{background-image:url(../img/chat/bg7.webp)}
 }
@@ -8070,6 +8267,14 @@ input {
 }
 
  @media print{
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-height: 667px){
 
 @supports (-webkit-appearance:none){
 
