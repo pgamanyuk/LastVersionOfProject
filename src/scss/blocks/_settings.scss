@@ -1,0 +1,104 @@
+.settings__links {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.settings__page {
+  margin-top: 130px;
+  padding: 0 50px 0 115px;
+}
+
+.settings__link {
+  color: $navy-blue;
+  padding-bottom: 18px;
+}
+
+.settings__link:hover {
+  cursor: pointer;
+}
+
+.personalData__avatar {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px $grey solid;
+}
+
+.personalData__avatar-item {
+  margin-right: 30px;
+}
+
+.personalData__avatar-item:last-child {
+  margin-right: 0;
+}
+
+.settings__container {
+  display: flex;
+  justify-content: center;
+}
+
+.personalData__avatar-img {
+  width: 80px;
+  height: 80px;
+}
+
+.personalData__avatar-description {
+  color:  rgba(17, 25, 33, .5);
+  font-size: 16px;
+}
+.personalData__avatar-title {
+  color: $navy-blue;
+}
+
+.personalData__avatar-btn {
+  padding: 6px 20px;
+  font-size: 18px;
+  text-align: center;
+  background-color: $dark-salad;
+  color: $white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.personalData__sex-title {
+  color: $navy-blue;
+  margin-bottom: 20px;
+}
+
+.personalData__sex-text {
+  color:  rgba(17, 25, 33, .5);
+  font-size: 16px;
+}
+
+.personalData__sex-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.personalData__sex-items {
+  display: flex;
+}
+
+.personalData__sex-img {
+  width: 16px;
+  height: 16px;
+  fill: $grey;
+  margin-right: 5px;
+}
+
+.personalData__item {
+  padding: 20px 0;
+  border-bottom: $grey 1px solid;
+}
+
+.personalData__sex-item:hover {
+  cursor: pointer;
+  .personalData__sex-img {
+    fill: $navy-blue;
+  }
+  .personalData__sex-text {
+    color: $navy-blue;
+  }
+
+}

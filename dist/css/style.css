@@ -2799,6 +2799,132 @@ input {
           transform: translate(-50%, -50%);
 }
 
+.settings__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.settings__page {
+  margin-top: 130px;
+  padding: 0 50px 0 115px;
+}
+
+.settings__link {
+  color: #111921;
+  padding-bottom: 18px;
+}
+
+.settings__link:hover {
+  cursor: pointer;
+}
+
+.personalData__avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px #00000080 solid;
+}
+
+.personalData__avatar-item {
+  margin-right: 30px;
+}
+
+.personalData__avatar-item:last-child {
+  margin-right: 0;
+}
+
+.settings__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.personalData__avatar-img {
+  width: 80px;
+  height: 80px;
+}
+
+.personalData__avatar-description {
+  color: rgba(17, 25, 33, 0.5);
+  font-size: 16px;
+}
+
+.personalData__avatar-title {
+  color: #111921;
+}
+
+.personalData__avatar-btn {
+  padding: 6px 20px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #0d6661;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.personalData__sex-title {
+  color: #111921;
+  margin-bottom: 20px;
+}
+
+.personalData__sex-text {
+  color: rgba(17, 25, 33, 0.5);
+  font-size: 16px;
+}
+
+.personalData__sex-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.personalData__sex-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.personalData__sex-img {
+  width: 16px;
+  height: 16px;
+  fill: #00000080;
+  margin-right: 5px;
+}
+
+.personalData__item {
+  padding: 20px 0;
+  border-bottom: #00000080 1px solid;
+}
+
+.personalData__sex-item:hover {
+  cursor: pointer;
+}
+
+.personalData__sex-item:hover .personalData__sex-img {
+  fill: #111921;
+}
+
+.personalData__sex-item:hover .personalData__sex-text {
+  color: #111921;
+}
+
 @media (min-width: 576px) {
   .container,
   .container-sm {

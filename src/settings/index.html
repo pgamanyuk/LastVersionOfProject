@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <title>Настройки</title>
+</head>
+<body>
+
+<div class="container">
+    @@include('../parts/_fade.html')
+    @@include('../parts/_burger.html')
+    @@include('../parts/_header.html')
+    @@include('../parts/_sidebar.html')
+
+    <div class="settings__page">
+        <div class="settings__links">
+            <div class="settings__link signbtn-active">Личные данные</div>
+            <div class="settings__link">Безопастность</div>
+            <div class="settings__link">Рассылки и оповещения</div>
+            <div class="settings__link">Выйти из акканута</div>
+        </div>
+
+        <div class="settings__container">
+            <div class="personalData__block">
+                <div class="personalData__avatar personalData__item">
+                    <div class="personalData__avatar-item">
+                        <img class="personalData__avatar-img" src="../img/profile/userAva.svg" alt="">
+                    </div>
+                    <div class="personalData__avatar-item">
+                        <div class="personalData__avatar-title">Аватар</div>
+                        <div class="personalData__avatar-description">Выберите аватар на свой вкус</div>
+                    </div>
+                    <div class="personalData__avatar-item">
+                        <button class="personalData__avatar-btn">Изменить</button>
+                    </div>
+                </div>
+
+                <div class="personalData__sex personalData__item">
+                    <div class="personalData__sex-title">Пол</div>
+                    <div class="personalData__sex-items">
+                        <div class="personalData__sex-item">
+
+                            <svg class="personalData__sex-img">
+                                <use xlink:href="#sex-mail"></use>
+                            </svg>
+
+                            <div class="personalData__sex-text">Мужской</div>
+                        </div>
+                        <div class="personalData__sex-item">
+                            <svg class="personalData__sex-img">
+                                <use xlink:href="#sex-femail"></use>
+                            </svg>
+                            <div class="personalData__sex-text">Женский</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@@include('../parts/_svg-sprites.html')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
+<script src="../js/header/header.js"></script>
+<script src="../js/settings/settings.js"></script>
+</body>
+</html>
